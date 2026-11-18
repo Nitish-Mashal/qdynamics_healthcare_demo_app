@@ -5,6 +5,10 @@ app_description = "Demo landing and login page for healthcare modulke"
 app_email = "nitish.m@quantumberg.com"
 app_license = "mit"
 
+# Guests see the Vue landing page at `/`; logged-in users retain Frappe's
+# normal home-page resolution.
+get_website_user_home_page = ["qdynamics_healthcare_demo_app.website.get_website_user_home_page"]
+
 # Apps
 # ------------------
 
