@@ -8,7 +8,7 @@ const { loginUrl } = useLoginUrl()
 const { scrollToSection } = useSectionScroll()
 const mobileOpen = ref(false)
 
-const qbLogo = '/files/QB_Logo.png'
+const qbLogo = '/files/quantumberg-logo.png'
 
 const links = [
   { label: 'Home', target: 'home' },

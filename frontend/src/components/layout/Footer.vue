@@ -7,7 +7,7 @@ const { loginUrl } = useLoginUrl()
 const { scrollToSection } = useSectionScroll()
 const year = computed(() => new Date().getFullYear())
 
-const qbLogo = '/files/QB_Logo.png'
+const qbLogo = '/files/quantumberg-logo.png'
 
 
 const links = [
