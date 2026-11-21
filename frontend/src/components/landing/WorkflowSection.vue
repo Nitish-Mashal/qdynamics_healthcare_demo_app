@@ -1,8 +1,8 @@
 <script setup>
 const steps = [
   'Lead',
-  'Appointment',
   'Registration',
+  'Appointment',
   'Consultation',
   'Lab',
   'Pharmacy',

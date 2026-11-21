@@ -1,19 +1,6 @@
-<script setup>
-import { useLoginUrl } from '@/composables/useLoginUrl'
-
-const { loginUrl } = useLoginUrl()
-
-const highlights = ['Patient-first workflows', 'Connected hospital operations', 'Role-based access']
-const overview = [
-  { label: 'Appointments', detail: 'OPD schedule', value: 'Today' },
-  { label: 'Patient records', detail: 'Registration & history', value: 'Connected' },
-  { label: 'Care teams', detail: 'Doctors & staff', value: 'Coordinated' },
-]
-</script>
-
 <template>
   <section id="home"
-    class="relative scroll-mt-24 overflow-hidden bg-health-bg pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-40">
+    class="relative scroll-mt-24 overflow-hidden bg-health-bg pb-16 pt-28 sm:pb-20 sm:pt-32 lg:pb-24 lg:pt-30">
     <div
       class="pointer-events-none absolute -right-36 -top-32 h-[440px] w-[440px] rounded-full bg-health-gradient-soft blur-3xl"
       aria-hidden="true" />
@@ -30,7 +17,8 @@ const overview = [
           Healthcare Management System
         </p>
 
-        <h1 class="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-health-deep sm:text-5xl xl:text-6xl">
+        <h1
+          class="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-health-deep sm:text-5xl xl:text-[50px]">
           Connected systems for
           <span class="bg-health-gradient bg-clip-text text-transparent">better care</span>
         </h1>
@@ -144,3 +132,17 @@ const overview = [
     </div>
   </section>
 </template>
+
+
+<script setup>
+import { useLoginUrl } from '@/composables/useLoginUrl'
+
+const { loginUrl } = useLoginUrl()
+
+const highlights = ['Patient-first workflows', 'Connected hospital operations', 'Role-based access']
+const overview = [
+  { label: 'Appointments', detail: 'OPD schedule', value: 'Today' },
+  { label: 'Patient records', detail: 'Registration & history', value: 'Connected' },
+  { label: 'Care teams', detail: 'Doctors & staff', value: 'Coordinated' },
+]
+</script>
