@@ -9,12 +9,10 @@ const year = computed(() => new Date().getFullYear())
 
 const qbLogo = '/files/quantumberg-logo.png'
 
-
 const links = [
   { label: 'Home', target: 'home' },
   { label: 'Features', target: 'features' },
-  { label: 'Care workflow', target: 'workflow' },
-  { label: 'Who it serves', target: 'roles' },
+  { label: 'Benefits', target: 'benefits' },
 ]
 
 function onNavClick(event, target) {
@@ -25,14 +23,10 @@ function onNavClick(event, target) {
 
 <template>
   <footer class="bg-[#301044] text-white">
-    <div class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
-      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr]">
+    <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+      <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_0.8fr_1.5fr]">
         <div>
-
-          <div>
-            <img :src="qbLogo" alt="QB Logo" class="h-8 w-auto lg:h-9">
-          </div>
-          
+          <img :src="qbLogo" alt="QB Logo" class="h-8 w-auto lg:h-9">
           <p class="mt-4 max-w-md text-sm leading-7 text-white/65">
             A connected healthcare workspace for patient care, hospital
             operations, billing, pharmacy, finance, and reporting.
@@ -72,9 +66,37 @@ function onNavClick(event, target) {
             </li>
           </ul>
         </nav>
+
+        <div>
+          <h2 class="text-xs font-bold uppercase tracking-[0.16em] text-white/45">
+            Contact
+          </h2>
+          <ul class="mt-4 space-y-2.5 text-sm text-white/75">
+            <li>
+              <a href="tel:+919741408044" class="transition-colors hover:text-white">
+                +91 97414 08044
+              </a>
+            </li>
+            <li>
+              <a href="mailto:admin@quantumberg.com" class="transition-colors hover:text-white">
+                admin@quantumberg.com
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://maps.app.goo.gl/hQjzBozyjy32EtWt7"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block leading-6 transition-colors hover:text-white"
+              >
+                No.1376, 2nd floor, 13th Cross, Sarakki Main Rd, 1st Phase, J. P. Nagar, Bengaluru, Karnataka 560078
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
 
-      <div class="mt-12 border-t border-white/10 pt-6">
+      <div class="mt-8 border-t border-white/10 pt-5">
         <p class="text-center text-xs text-white/50 sm:text-left">
           &copy; {{ year }} Quantumberg Technologies Pvt Ltd &middot; Healthcare Management System
         </p>

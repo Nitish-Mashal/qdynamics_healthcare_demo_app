@@ -13,8 +13,7 @@ const qbLogo = '/files/quantumberg-logo.png'
 const links = [
   { label: 'Home', target: 'home' },
   { label: 'Features', target: 'features' },
-  { label: 'Care workflow', target: 'workflow' },
-  { label: 'Who it serves', target: 'roles' },
+  { label: 'Benefits', target: 'benefits' },
 ]
 
 function onNavClick(event, target) {

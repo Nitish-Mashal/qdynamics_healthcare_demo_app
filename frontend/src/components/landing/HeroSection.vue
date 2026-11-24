@@ -14,18 +14,18 @@
         <p
           class="inline-flex items-center gap-2 rounded-full border border-health-border bg-white px-4 py-1.5 text-sm font-semibold text-health-purple shadow-sm">
           <span class="h-2 w-2 rounded-full bg-health-pink" aria-hidden="true" />
-          Healthcare Management System
+          AI-Powered Healthcare Management System
         </p>
 
         <h1
           class="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-health-deep sm:text-5xl xl:text-[50px]">
-          Connected systems for
+          AI-powered healthcare for
           <span class="bg-health-gradient bg-clip-text text-transparent">better care</span>
         </h1>
 
         <p class="mt-6 max-w-2xl text-lg leading-8 text-health-muted">
           Bring patient records, appointments, clinical workflows, billing,
-          pharmacy, and hospital operations together in one healthcare workspace.
+          pharmacy, and hospital operations together in one AI-powered healthcare workspace.
         </p>
 
         <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -139,7 +139,7 @@ import { useLoginUrl } from '@/composables/useLoginUrl'
 
 const { loginUrl } = useLoginUrl()
 
-const highlights = ['Patient-first workflows', 'Connected hospital operations', 'Role-based access']
+const highlights = ['AI-powered insights', 'Patient-first workflows', 'Connected hospital operations']
 const overview = [
   { label: 'Appointments', detail: 'OPD schedule', value: 'Today' },
   { label: 'Patient records', detail: 'Registration & history', value: 'Connected' },

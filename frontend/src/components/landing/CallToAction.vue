@@ -5,18 +5,18 @@ const { loginUrl } = useLoginUrl()
 </script>
 
 <template>
-  <section id="contact" class="relative scroll-mt-24 overflow-hidden bg-health-gradient py-20 lg:py-24">
+  <section id="contact" class="relative scroll-mt-24 overflow-hidden bg-health-gradient py-16 lg:py-20">
     <div class="pointer-events-none absolute inset-0 opacity-[0.12]" aria-hidden="true"
       style="background-image: radial-gradient(circle at 20% 20%, #fff 1px, transparent 1px); background-size: 22px 22px;" />
     <div class="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
       <p class="text-sm font-bold uppercase tracking-[0.18em] text-pink-200">
-        See the system in action
+        See AI-powered care in action
       </p>
       <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
-        Bring healthcare operations together
+        Bring AI-powered healthcare operations together
       </h2>
       <p class="mx-auto mt-4 max-w-2xl text-lg leading-8 text-white/75">
-        Explore how connected patient, clinical, financial, and administrative
+        Explore how AI-powered capabilities and connected patient, clinical, financial, and administrative
         workflows can support your healthcare organization.
       </p>
       <div class="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">

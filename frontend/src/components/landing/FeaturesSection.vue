@@ -121,23 +121,23 @@ const features = [
 </script>
 
 <template>
-  <section id="features" class="scroll-mt-24 bg-white py-20 lg:py-28">
+  <section class="scroll-mt-24 bg-white py-16 lg:py-20">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="mx-auto max-w-3xl text-center">
+      <div id="features" class="mx-auto max-w-3xl text-center">
         <p class="text-sm font-bold uppercase tracking-[0.18em] text-health-purple">
-          Healthcare Management System Features
+          AI-Powered Healthcare Management System Features
         </p>
         <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-health-deep sm:text-4xl">
           The tools to coordinate
           <span class="bg-health-gradient bg-clip-text text-transparent">care and operations</span>
         </h2>
         <p class="mt-4 text-lg leading-8 text-health-muted">
-          Explore the capabilities across patient care, hospital administration,
-          finance, pharmacy, reporting, and security.
+          Explore capabilities across patient care, hospital administration,
+          finance, pharmacy, reporting, and security in one AI-powered workspace.
         </p>
       </div>
 
-      <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         <article v-for="(feature, index) in features" :key="feature.title"
           class="group rounded-2xl border border-health-border bg-white p-6 shadow-health-card transition-all duration-300 hover:-translate-y-1 hover:border-health-pink/50 hover:shadow-health-panel">
           <div class="flex items-start justify-between gap-4">
