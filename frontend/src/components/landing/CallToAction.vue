@@ -1,11 +1,5 @@
-<script setup>
-import { useLoginUrl } from '@/composables/useLoginUrl'
-
-const { loginUrl } = useLoginUrl()
-</script>
-
 <template>
-  <section id="contact" class="relative scroll-mt-24 overflow-hidden bg-health-gradient py-16 lg:py-20">
+  <section id="contact" class="relative scroll-mt-24 overflow-hidden bg-health-gradient py-16 lg:py-12">
     <div class="pointer-events-none absolute inset-0 opacity-[0.12]" aria-hidden="true"
       style="background-image: radial-gradient(circle at 20% 20%, #fff 1px, transparent 1px); background-size: 22px 22px;" />
     <div class="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
@@ -36,3 +30,9 @@ const { loginUrl } = useLoginUrl()
     </div>
   </section>
 </template>
+
+<script setup>
+import { useLoginUrl } from '@/composables/useLoginUrl'
+
+const { loginUrl } = useLoginUrl()
+</script>

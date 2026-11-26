@@ -1,31 +1,13 @@
-<script setup>
-const benefits = [
-  {
-    title: 'A more connected experience',
-    description: 'Bring patient information and care activities together in one healthcare workspace.',
-    icon: 'connected',
-  },
-  {
-    title: 'Simpler daily operations',
-    description: 'Coordinate appointments, billing, pharmacy, and hospital workflows in one place.',
-    icon: 'operations',
-  },
-  {
-    title: 'AI-powered insights',
-    description: 'Pair AI-powered capabilities with reports and dashboards to understand activity across your healthcare organization.',
-    icon: 'insight',
-  },
-]
-</script>
+
 
 <template>
-  <section class="scroll-mt-24 bg-health-bg py-16 lg:py-20">
+  <section class="scroll-mt-24 bg-health-bg py-16 lg:py-12">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div id="benefits" class="mx-auto max-w-3xl text-center">
         <p class="text-sm font-bold uppercase tracking-[0.18em] text-health-purple">
-          AI-Powered Benefits
+          Benefits
         </p>
-        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-health-deep sm:text-4xl">
+        <h2 class="mt-3 text-3xl font-extrabold tracking-tight text-health-deep sm:text-7xl">
           Connected care, enhanced by AI
         </h2>
         <p class="mt-4 text-lg leading-8 text-health-muted">
@@ -64,3 +46,23 @@ const benefits = [
     </div>
   </section>
 </template>
+
+<script setup>
+const benefits = [
+  {
+    title: 'A more connected experience',
+    description: 'Bring patient information and care activities together in one healthcare workspace.',
+    icon: 'connected',
+  },
+  {
+    title: 'Simpler daily operations',
+    description: 'Coordinate appointments, billing, pharmacy, and hospital workflows in one place.',
+    icon: 'operations',
+  },
+  {
+    title: 'AI-powered insights',
+    description: 'Pair AI-powered capabilities with reports and dashboards to understand activity across your healthcare organization.',
+    icon: 'insight',
+  },
+]
+</script>
