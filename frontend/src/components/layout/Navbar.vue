@@ -53,7 +53,7 @@ onBeforeUnmount(() => {
 
       <div class="hidden items-center gap-1 lg:flex">
         <a v-for="link in links" :key="link.target" :href="`#${link.target}`"
-          class="rounded-lg px-3 py-2 text-sm font-medium text-health-muted transition-colors hover:text-health-purple focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-health-purple"
+          class="rounded-lg px-3 py-2 font-medium text-health-muted transition-colors hover:text-health-purple focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-health-purple"
           @click="onNavClick($event, link.target)">
           {{ link.label }}
         </a>
