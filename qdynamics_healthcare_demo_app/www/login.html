@@ -418,7 +418,7 @@ main.container{
     flex:none;
 }
 
-.quick-btn-frontdesk .dot{
+.quick-btn .dot{
     background:var(--qb-purple);
 }
 
@@ -426,7 +426,15 @@ main.container{
     background:#7b2d87;
 }
 
-.quick-btn-labratory .dot{
+.quick-btn-doctor .dot{
+    background:#2580A8;
+}
+
+.quick-btn-nursing .dot{
+    background:#388A68;
+}
+
+.quick-btn-laboratory .dot{
     background:var(--qb-magenta);
 }
 
@@ -813,21 +821,30 @@ main.container{
 
             <div class="quick-buttons" role="group" aria-label="{{ _('Demo roles') }}">
 
-                <button type="button" class="quick-btn quick-btn-frontdesk" data-role="frontdesk">
-                    <span class="dot" aria-hidden="true"></span>
-                    <span>{{ _("Frontdesk") }}</span>
-                </button>
-
                 <button type="button" class="quick-btn quick-btn-admin" data-role="admin">
                     <span class="dot" aria-hidden="true"></span>
                     <span>{{ _("Admin") }}</span>
                 </button>
 
-                <button type="button" class="quick-btn quick-btn-labratory" data-role="labratory">
+                <button type="button" class="quick-btn quick-btn-frontdesk" data-role="frontdesk">
                     <span class="dot" aria-hidden="true"></span>
-                    <span>{{ _("Labratory") }}</span>
+                    <span>{{ _("Frontdesk") }}</span>
                 </button>
-
+                
+                <button type="button" class="quick-btn quick-btn-doctor" data-role="doctor">
+                    <span class="dot" aria-hidden="true"></span>
+                    <span>{{ _("Doctor") }}</span>
+                </button>
+                
+                <button type="button" class="quick-btn quick-btn-laboratory" data-role="laboratory">
+                    <span class="dot" aria-hidden="true"></span>
+                    <span>{{ _("Laboratory") }}</span>
+                </button>
+                
+                <button type="button" class="quick-btn quick-btn-nursing" data-role="nursing">
+                    <span class="dot" aria-hidden="true"></span>
+                    <span>{{ _("Nursing") }}</span>
+                </button>
             </div>
 
             <p class="quick-note">
@@ -854,45 +871,15 @@ main.container{
     "use strict";
 
     var DEMO_ACCOUNTS = {
-        frontdesk: { usr: "frontdesk@gmail.com", pwd: "demo@123" },
-        admin: { usr: "demoadmin@demo.local", pwd: "demo@123" },
-        labratory: { usr: "labtech@gmail.com", pwd: "demo@123" }
+        admin: { usr: "demoadmin@gmail.com", pwd: "Demoadmin@123" },
+        nursing: { usr: "nursingdemo@gmail.com", pwd: "Nursing@123" },
+        doctor: { usr: "demodoctor@gmail.com", pwd: "Demodoctor@123" },
+        frontdesk: { usr: "demofrontdesk@demo.local", pwd: "Frontdesk@123" },
+        laboratory: { usr: "demolab@demo.local", pwd: "Demolab@123" }
     };
-
-    // Demo role of the sign-in attempt in flight: set from the quick-login
-    // button (data-role) or from the username typed into the form, read only
-    // after Frappe reports a successful login, cleared once it is used.
-    var pendingRole = null;
 
     var busy = false;
     var safetyTimer = null;
-
-    function roleForUsername(usr) {
-        for (var role in DEMO_ACCOUNTS) {
-            if (DEMO_ACCOUNTS[role].usr === usr) {
-                return role;
-            }
-        }
-        return null;
-    }
-
-    // Keep Frappe's redirect handling for non-demo accounts. Demo accounts
-    // land on the desk (/app) with a brief splash screen.
-    var stockLogin200 = login.login_handlers[200];
-
-    login.login_handlers[200] = function (data) {
-        var role = pendingRole;
-
-        if (data && data.message === "Logged In" && DEMO_ACCOUNTS[role]) {
-            pendingRole = null;
-            login.set_status({{ _("Success") | tojson }}, "green");
-            document.body.innerHTML = `{% include "templates/includes/splash_screen.html" %}`;
-            window.location.href = "/app";
-            return;
-        }
-
-        return stockLogin200(data);
-    };
 
     function setBusy(state) {
         busy = state;
@@ -930,8 +917,6 @@ main.container{
     $("form.form-login").on("submit.health_guard", function (event) {
         var usr = ($("#login_email").val() || "").trim();
         var pwd = $("#login_password").val() || "";
-
-        pendingRole = roleForUsername(usr);
 
         if (!usr || !pwd) {
             return;
@@ -998,7 +983,6 @@ main.container{
         // (same endpoint, CSRF handling and session flow as the Sign in
         // form). The visible username/password fields are never filled.
         try {
-            pendingRole = role;
             login.call(
                 { cmd: "login", usr: account.usr, pwd: account.pwd },
                 null,
